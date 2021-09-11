@@ -1,5 +1,5 @@
 const locationList = [{ "temperature": 15, "location": "Glasgow" }, {"temperature": 10,
-"location": "Edinburgh" }];
+"location": "Edinburgh" }]; // Hardcoded at present
 
 export default function getLocationTemperature(searchLocation: string) {
 
