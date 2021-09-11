@@ -1,4 +1,4 @@
-import { useState, useRef, SyntheticEvent } from 'react';
+import { useState, SyntheticEvent } from 'react';
 import JumperOrGunsOot from '../components/JumperOrGunsOot';
 import getLocationTemperature from '../functions/getLocationTemperature';
 import CSS from 'csstype';
@@ -6,11 +6,6 @@ import CSS from 'csstype';
 export default function CheckWeatherContainer() {
     const [temperature, setTemperature] = useState<number | null>(null);
     const [city, setCity] = useState<string>('glasgow');
-
-    const weatherContainerStyle: CSS.Properties = {
-        display: 'flex',
-        flexDirection: 'column',
-    }
 
     const handleGetTemperatureButtonClick = async () => {
         console.log('Button Clicked!');
