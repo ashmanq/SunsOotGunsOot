@@ -6,7 +6,7 @@ This is a simple react app that tells the user weather to _get the guns oot_ dep
     - If over 15C then inform user not to wear a jumper
     - If below 15C then inform user to wear a jumper
 - App should be a Single Page App
-- 
+  
 ## Learning Objectives
 - Learn to use typescript - This will be the first time I use TypeScript in a React app.
 - Practice TDD - Use TDD while developing the app, where possible, using the bundled Jest package.
