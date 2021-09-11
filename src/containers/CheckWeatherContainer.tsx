@@ -1,10 +1,16 @@
 import { useState, useRef, SyntheticEvent } from 'react';
 import JumperOrGunsOot from '../components/JumperOrGunsOot';
 import getLocationTemperature from '../functions/getLocationTemperature';
+import CSS from 'csstype';
 
 export default function CheckWeatherContainer() {
     const [temperature, setTemperature] = useState<number | null>(null);
     const [city, setCity] = useState<string>('glasgow');
+
+    const weatherContainerStyle: CSS.Properties = {
+        display: 'flex',
+        flexDirection: 'column',
+    }
 
     const handleGetTemperatureButtonClick = async () => {
         console.log('Button Clicked!');
@@ -24,15 +30,15 @@ export default function CheckWeatherContainer() {
     return (
         <div>
             <h2>Shall I Get the Guns Oot?</h2>
-            <div>
-                <label htmlFor="city">Choose a City:</label>
+            <div style={{display: 'flex', flexDirection: 'column'}}>
+            <JumperOrGunsOot temperature={temperature}/>
+                <label style={{marginBottom: 10}} htmlFor="city">Choose a City:</label>
 
-                <select onChange={(e) => onLocationSelect(e)} name="city" id="city">
+                <select style={{marginBottom: 10, fontSize:24, textAlign: 'center'}} onChange={(e) => onLocationSelect(e)} name="city" id="city">
                     <option value="glasgow">Glasgow</option>
                     <option value="edinburgh">Edinburgh</option>
                 </select>
-                <button onClick={() => handleGetTemperatureButtonClick()}>Check Weather</button>
-                <JumperOrGunsOot temperature={temperature}/>
+                <button style={{marginBottom: 10, fontSize:24}} onClick={() => handleGetTemperatureButtonClick()}>Check Weather</button>
             </div>
 
         </div>

@@ -13,9 +13,19 @@ describe('Rendering tests', () => {
       });
 
     // Test the rendering of the app result
-    test('renders result when button clicked to get temperature', () => {
+    test('renders result when button clicked to get temperature AT 15C', () => {
         render(<JumperOrGunsOot temperature={15}/>);
         const textElement = screen.getByText(/Suns Oot Guns Oot!/)
+        expect(textElement).toBeInTheDocument();
+    })
+    test('renders result when button clicked to get temperature ABOVE 15C', () => {
+        render(<JumperOrGunsOot temperature={15}/>);
+        const textElement = screen.getByText(/Suns Oot Guns Oot!/)
+        expect(textElement).toBeInTheDocument();
+    })
+    test('renders result when button clicked to get temperature BELOW 15C', () => {
+        render(<JumperOrGunsOot temperature={14}/>);
+        const textElement = screen.getByText(/Wear a Jumper!/)
         expect(textElement).toBeInTheDocument();
     })
 })
