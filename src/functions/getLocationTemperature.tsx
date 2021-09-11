@@ -1,5 +1,5 @@
-const locationList = [{ "temperature": 15, "location": "Glasgow" }, {"temperature": 10,
-"location": "Edinburgh" }]; // Hardcoded at present
+const locationList = [{ "temperature": 15, "location": "glasgow" }, {"temperature": 10,
+"location": "edinburgh" }]; // Hardcoded at present
 
 export default function getLocationTemperature(searchCity: string): number | null {
 

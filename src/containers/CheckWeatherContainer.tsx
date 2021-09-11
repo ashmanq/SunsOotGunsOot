@@ -7,11 +7,18 @@ export default function CheckWeatherContainer() {
     const [city, setCity] = useState<string>('glasgow');
 
     const handleGetTemperatureButtonClick = async () => {
+        console.log('Button Clicked!');
+        
         const weatherResult= await getLocationTemperature(city)
         if (weatherResult) setTemperature(weatherResult);
+
+        console.log('Weather Result: ', weatherResult);
+        
     }
 
     const onLocationSelect = (e: SyntheticEvent<HTMLSelectElement, Event>) => {
+        console.log('Location Selected!');
+        
         setCity((e.target as HTMLTextAreaElement).value);
     }
     return (
@@ -20,9 +27,9 @@ export default function CheckWeatherContainer() {
             <div>
                 <label htmlFor="city">Choose a City:</label>
 
-                <select onSelect={(e) => onLocationSelect(e)} name="city" id="city">
-                    <option value="glasgow,uk">Glasgow</option>
-                    <option value="edinburgh,uk">Edinburgh</option>
+                <select onChange={(e) => onLocationSelect(e)} name="city" id="city">
+                    <option value="glasgow">Glasgow</option>
+                    <option value="edinburgh">Edinburgh</option>
                 </select>
                 <button onClick={() => handleGetTemperatureButtonClick()}>Check Weather</button>
                 <JumperOrGunsOot temperature={temperature}/>
