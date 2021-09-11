@@ -6,12 +6,6 @@ import getLocationTemperature from '../functions/getLocationTemperature';
 import JumperOrGunsOot from '../components/JumperOrGunsOot';
 
 describe('Rendering tests', () => {
-    test('renders learn react link', () => {
-        render(<App />);
-        const linkElement = screen.getByText(/learn react/i);
-        expect(linkElement).toBeInTheDocument();
-      });
-
     // Test the rendering of the app result
     test('renders result when button clicked to get temperature AT 15C', () => {
         render(<JumperOrGunsOot temperature={15}/>);
@@ -34,14 +28,14 @@ describe('Rendering tests', () => {
 // Test function that returns temperature
 describe('Function tests', () => {
     // Return temperature test
-    test('gets a temperature for location', () => {
-        const locationTemperature = getLocationTemperature('glasgow');
+    test('gets a temperature for location', async() => {
+        const locationTemperature = await getLocationTemperature('glasgow,uk');
         expect(locationTemperature).toBeDefined();
-        expect(locationTemperature).toEqual(15);
+        // expect(locationTemperature).toEqual(15);
     })
-    test('returns "undefined" when location not found', () => {
-        const locationTemperature: number | null = getLocationTemperature('London');
-        expect(locationTemperature).toBeNull();
+    test('returns "undefined" when location not found', async() => {
+        const locationTemperature: number | undefined = await getLocationTemperature('hshh,uk');
+        expect(locationTemperature).toBeUndefined();
     })
 })
 
