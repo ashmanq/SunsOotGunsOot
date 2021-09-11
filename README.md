@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Suns Oot Guns Oot App
+This is a simple react app that tells the user weather to _get the guns oot_ depending on the temperature at their location.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Learning Objectives
+- Learn to use typescript - This will be the first time I use TypeScript in a React app.
+- Practice TDD - Use TDD while developing the app, where possible, using the bundled Jest package.
+
+## App Requirements
+- App should tell the user whether to wear a jumper or not based on the temperature
+    - If over 15C then no jumper
+    - If below 15C then wear a jumper
+- App should be a Single Page App
 
 ## Available Scripts
 
@@ -29,18 +38,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
